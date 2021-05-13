@@ -1,7 +1,7 @@
 #!/bin/bash
 
 START_DIR="${START_DIR:-/home/coder/code-server}"
-REQUIRED_DIR="${START_DIR:-/home/coder/discord-bot}"
+REQUIRED_DIR="${REQUIRED_DIR:-/home/coder/discord-bot}"
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
