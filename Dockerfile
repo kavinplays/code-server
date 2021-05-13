@@ -38,6 +38,7 @@ RUN sudo apt-get install -y python3-pip
 RUN sudo pip3 install numpy
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
+RUN git clone --branch staging https://github.com/kavinplays/discord-bot.git
 
 # Port
 ENV PORT=8080
