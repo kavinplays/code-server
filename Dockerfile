@@ -45,4 +45,3 @@ ENV PORT=8080
 # Use our custom entrypoint script first
 COPY entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
-#RUN cd .. && cd discord-bot
