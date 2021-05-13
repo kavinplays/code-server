@@ -1,3 +1,5 @@
+ARG GIT_PRIVATE
+
 # Start from the code-server Debian base image
 FROM codercom/code-server:3.9.3 
 
@@ -38,7 +40,7 @@ RUN sudo apt-get install -y python3-pip
 RUN sudo pip3 install numpy
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
-RUN git clone --branch staging https://github.com/kavinplays/discord-bot.git
+RUN git clone --branch staging $GIT_PRIVATE
 
 # Port
 ENV PORT=8080
