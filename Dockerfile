@@ -39,8 +39,8 @@ RUN sudo pip3 install numpy
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
 RUN echo "hello"
-ENV git_pvt "$GIT_PRIVATE"
-RUN echo git_pvt
+ENV GIT_PVT "$GIT_PRIVATE"
+RUN echo GIT_PVT
 #RUN git clone --branch staging $GIT_PRIVATE
 
 # Port
