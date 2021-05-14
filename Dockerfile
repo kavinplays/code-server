@@ -3,7 +3,7 @@ FROM codercom/code-server:3.9.3
 
 USER coder
 
-# Apply VS Code settings
+# Apply VS Code settings 
 COPY settings.json .local/share/code-server/User/settings.json
 
 # Use bash shell
