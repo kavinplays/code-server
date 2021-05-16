@@ -2,13 +2,14 @@
 
 START_DIR="${START_DIR:-/home/coder/code-server}"
 REQUIRED_DIR="${REQUIRED_DIR:-/home/coder}"
+REAL_START_DIR="${START_DIR:-/home/coder/discord}"#change to telegram when working on telegram
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $GIT_REPO $START_DIR && sudo git clone ${GIT_PRIVATE} && sudo chown -R coder $REQUIRED_DIR
+    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $GIT_REPO $START_DIR && sudo git clone -b discord --singlebranch ${GIT_PRIVATE} && sudo git clone -b telegram --singlebranch ${GIT_PRIVATE} && sudo chown -R coder $REQUIRED_DIR
 }
 
 # add rclone config and start rclone, if supplied
@@ -78,4 +79,4 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $REQUIRED_DIR
+/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $REAL_START_DIR
