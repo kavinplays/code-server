@@ -78,4 +78,4 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 /home/coder/discord/bots
+/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 /home/coder/telegram/bots
