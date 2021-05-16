@@ -2,8 +2,6 @@
 
 START_DIR="${START_DIR:-/home/coder/code-server}"
 REQUIRED_DIR="${REQUIRED_DIR:-/home/coder}"
-REAL_START_DIR="${REAL_START_DIR:-/home/coder/discord/bots}"
-#change discord to telegram when working on telegram
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
@@ -80,4 +78,4 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $START_DIR
+/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 /home/coder/discord/bots
