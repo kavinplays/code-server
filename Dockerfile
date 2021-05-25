@@ -38,7 +38,7 @@ RUN sudo apt-get install -y python3-pip
 RUN sudo pip3 install numpy
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
-RUN wget https://github.com/microsoft/vscode-python/releases/download/2021.5.842923320/ms-python-release.vsix
+RUN wget https://github.com/microsoft/vscode-python/releases/download/2021.5.840043038/ms-python-release.vsix
 RUN ls
 RUN code-server --install-extension ./ms-python-release.vsix
 # Port
