@@ -8,7 +8,7 @@ mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $GIT_REPO $START_DIR && sudo mkdir discord && cd discord && sudo git clone -b discord --single-branch ${GIT_PRIVATE} && cd .. && sudo mkdir telegram && cd telegram && sudo git clone -b telegram --single-branch ${GIT_PRIVATE} && sudo chown -R coder $REQUIRED_DIR
+    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || sudo wget https://github.com/microsoft/vscode-python/releases/download/2021.5.842923320/ms-python-release.vsix && sudo code-server --install-extension ./ms-python-release.vsix && git clone $GIT_REPO $START_DIR && sudo mkdir discord && cd discord && sudo git clone -b discord --single-branch ${GIT_PRIVATE} && cd .. && sudo mkdir telegram && cd telegram && sudo git clone -b telegram --single-branch ${GIT_PRIVATE} && sudo chown -R coder $REQUIRED_DIR
 }
 
 # add rclone config and start rclone, if supplied
