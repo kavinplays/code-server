@@ -3,5 +3,7 @@
   "git.postCommitCommand": "sync",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false
 }
