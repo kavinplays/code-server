@@ -35,7 +35,7 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 RUN sudo apt install software-properties-common -y
 RUN sudo add-apt-repository ppa:deadsnakes/ppa -y
-RUN sudo apt install python3.9 -y
+RUN sudo apt install python3 -y
 RUN sudo apt-get install -y python3-pip
 RUN sudo pip3 install numpy
 RUN code-server --install-extension ms-python.python
