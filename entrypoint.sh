@@ -1,13 +1,13 @@
 #!/bin/bash
 
-START_DIR="${START_DIR:-/home/coder/projects}"
+START_DIR="${START_DIR:-/home/coder}"
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    sudo mkdir $START_DIR/.deta/ && sudo touch tokens && sudo echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > tokens && sudo mv tokens $START_DIR/.deta/tokens
+    sudo mkdir $START_DIR/.deta/ && cd $START_DIR/.deta/ && sudo touch tokens && sudo echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > tokens# && sudo mv tokens $START_DIR/.deta/tokens
 }
 
 # add rclone config and start rclone, if supplied
@@ -77,4 +77,4 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $START_DIR
+/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $START_DIR/projects
