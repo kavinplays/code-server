@@ -41,8 +41,8 @@ RUN code-server --install-extension ms-python.python
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
 RUN sudo curl -fsSL https://get.deta.dev/cli.sh | sh
-RUN sudo su
-RUN sudo npm i @cloudflare/wrangler -g
+RUN sudo curl https://sh.rustup.rs -sSf | sh
+RUN sudo cargo install wrangler
 
 # Port
 ENV PORT=8080
