@@ -7,7 +7,7 @@ mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    sudo mkdir $START_DIR/.deta/ && cd $START_DIR/.deta/ && sudo touch tokens && sudo echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > tokens# && sudo mv tokens $START_DIR/.deta/tokens
+    sudo mkdir $START_DIR/projects && cd $START_DIR/.deta/ && sudo touch tokens && sudo echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > tokens# && sudo mv tokens $START_DIR/.deta/tokens
 }
 
 # add rclone config and start rclone, if supplied
