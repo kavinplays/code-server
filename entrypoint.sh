@@ -7,7 +7,9 @@ PREFIX="deploy-code-server"
 mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
-project_init () {}
+project_init () {
+    export DETA_ACCESS_TOKEN=$DETA_TOKEN
+}
 
 # add rclone config and start rclone, if supplied
 if [[ -z "${RCLONE_DATA}" ]]; then
