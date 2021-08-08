@@ -42,7 +42,7 @@ RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
 RUN sudo curl -fsSL https://get.deta.dev/cli.sh | sh
 RUN sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
-RUN sudo $HOME/.cargo/env install wrangler -y
+RUN sudo $HOME/.cargo/bin install wrangler -y
 
 # Port
 ENV PORT=8080
