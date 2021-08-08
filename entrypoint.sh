@@ -7,9 +7,7 @@ PREFIX="deploy-code-server"
 mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
-project_init () {
-    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $GIT_REPO $START_DIR && sudo mkdir discord && cd discord && sudo git clone -b discord --single-branch ${GIT_PRIVATE} && cd .. && sudo mkdir telegram && cd telegram && sudo git clone -b telegram --single-branch ${GIT_PRIVATE} && sudo chown -R coder $REQUIRED_DIR
-}
+project_init () {}
 
 # add rclone config and start rclone, if supplied
 if [[ -z "${RCLONE_DATA}" ]]; then
@@ -78,4 +76,4 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 /home/coder/telegram/bots
+/usr/bin/entrypoint.sh --disable-update-check --bind-addr 0.0.0.0:8080 $
