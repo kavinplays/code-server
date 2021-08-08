@@ -40,6 +40,9 @@ RUN sudo apt-get install -y python3-pip
 RUN code-server --install-extension ms-python.python
 RUN git config --global user.name "Kavin Shanbhag"
 RUN git config --global user.email "kavinplays@icloud.com"
+RUN sudo curl -fsSL https://get.deta.dev/cli.sh | sh
+RUN source ~/.bashrc
+RUN npm i @cloudflare/wrangler -g
 
 # Port
 ENV PORT=8080
