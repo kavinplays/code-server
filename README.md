@@ -1,1 +1,1 @@
-Testing out how powerful code-server is!
+Seems good, hopefully i won't run over the free limit
