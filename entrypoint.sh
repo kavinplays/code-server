@@ -4,10 +4,11 @@ START_DIR="${START_DIR:-/home/coder/projects}"
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
+mkdir -p $START_DIR/.deta/
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    sudo touch $START_DIR/.deta/tokens.txt && echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > $START_DIR/.deta/tokens.txt && sudo mv $START_DIR/.deta/tokens.txt $START_DIR/.deta/tokens
+    sudo cd $START_DIR/.deta/ && sudo touch tokens && sudo echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > tokens
 }
 
 # add rclone config and start rclone, if supplied
