@@ -1,14 +1,14 @@
 #!/bin/bash
 
 START_DIR="${START_DIR:-/home/coder/code-server}"
-REQUIRED_DIR="${REQUIRED_DIR:-/home/coder}"
+REQUIRED_DIR="${REQUIRED_DIR:-/home/coder/projects}"
 PREFIX="deploy-code-server"
 
 mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    echo "Hello"
+    echo "{"deta_access_token": "${DETA_ACCESS_TOKEN}"}" > $START_DIR/.deta/tokens && sudo mkdir projects
 }
 
 # add rclone config and start rclone, if supplied
