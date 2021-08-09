@@ -7,7 +7,7 @@ mkdir -p $START_DIR
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    echo "HELLO"
+    sudo mkdir $START_DIR/projects
 }
 
 # add rclone config and start rclone, if supplied
