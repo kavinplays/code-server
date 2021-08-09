@@ -6,7 +6,7 @@ PREFIX="deploy-code-server"
 mkdir -p $START_DIR
 
 project_init () {
-    sudo mkdir $START_DIR/projects && cargo install wrangler
+    sudo mkdir $START_DIR/projects
 }
 project_init
 echo "[$PREFIX] Starting code-server..."
