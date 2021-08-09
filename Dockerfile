@@ -22,7 +22,7 @@ RUN git config --global user.email "kavinplays@icloud.com"
 RUN sudo curl -fsSL https://get.deta.dev/cli.sh | sh
 RUN sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
-RUN cargo install wrangler
+RUN sudo cargo install wrangler
 
 # Port
 ENV PORT=8080
